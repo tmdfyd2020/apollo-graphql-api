@@ -1,0 +1,16 @@
+1. npm init -y
+2. npm i apollo-server graphql
+3. npm i nodemon -D
+    변경 내용을 저장할 떄마다 nodemon이 서버를 재시작
+4. git init .
+5. [ git ignore ]
+    추가
+        node_modules/
+6. [ package.json ]
+    수정
+        "scripts": {
+            "dev": "nodemon server.js"
+        },
+    추가
+        "type": "module"
+            -> import 문을 사용하기 위해
