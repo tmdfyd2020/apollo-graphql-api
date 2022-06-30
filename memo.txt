@@ -14,3 +14,6 @@
     추가
         "type": "module"
             -> import 문을 사용하기 위해
+
+7. 서버 실행
+    npm run dev
