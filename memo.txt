@@ -1,19 +1,42 @@
-1. npm init -y
-2. npm i apollo-server graphql
-3. npm i nodemon -D
-    변경 내용을 저장할 떄마다 nodemon이 서버를 재시작
-4. git init .
-5. [ git ignore ]
-    추가
+🔴 API (Application Programming Interface)
+    ⚪ 인터페이스 : 무엇인가와 상호작용하는 방법 (예: TV와 상호작용할 수 있도록 도와주는 리모콘 버튼)
+    ⚪ 어플리케이션, 서버, 웹사이트를 만든 사람이 만들어서 내놓은 것(버튼)이며, 사람들은 API를 통해 상호작용할 수 있다.
+
+🟠 REST API와 GraphQL API
+    ⚪ REST API와 GraphQL API의 차이점은 리모콘 버튼 모양이 다른 것일 뿐이다.
+    ⚪ REST API는 특정 URL로 요청하는 것이다.
+        nomadmovies.co/api/movies
+        nomadmovies.co/api/movies/1
+        nomadmovies.co/api/search?rating=9
+    ⚪ URL에 동사이름을 넣는 것은 바람직하지 못하기 때문에 이를 HTTP 메소드로 해결한다.
+        ⚪ GET : 어떤 사이트에 접속할 때
+        ⚪ POST : form이나 데이터를 보내고 싶을 때
+            - GET   nomadmovies.co/api/movies : 영화 정보 가져오기
+            - POST  nomadmovies.co/api/movies : 영화 생성하기
+            - GET   nomadmovies.co/api/movies/1 : 영화 정보 가져오기
+            - PUT   nomadmovies.co/api/movies/1 : 영화 업데이트(수정)하기
+
+🟡 REST API의 단점 해결
+    ⚪ over-fetching
+        ⚪ REST API : 데이터를 쓰던 말던 너무 많은 데이터를 받는다.
+        ⚪ GraphQL API : 필요한 데이터만 요청해서 받는다.
+    ⚪ under-fetching
+        ⚪ REST API : 영화에 대한 정보를 한 화면에 보여주기 위해서 매칭이 필요한만큼 요청을 여러 번 해야 하는 문제가 있다.
+        ⚪ GraphQL API : 하나의 요청으로 매칭되는 여러 개의 데이터를 받을 수 있다.
+
+🟢 프로젝트 사용 가이드
+    ⚪ npm init -y
+    ⚪ npm i apollo-server graphql
+    ⚪ npm i nodemon -D
+        변경 내용을 저장할 때마다 nodemon이 서버를 재시작
+    ⚪ git init .
+    ⚪ [ .gitignore ] 추가
         node_modules/
-6. [ package.json ]
-    수정
+    ⚪ [ package.json ] 수정
         "scripts": {
             "dev": "nodemon server.js"
         },
-    추가
+    ⚪ [ package.json ] 추가
         "type": "module"
             -> import 문을 사용하기 위해
-
-7. 서버 실행
-    npm run dev
+    ⚪ npm run dev 서버 실행
